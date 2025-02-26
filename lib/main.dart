@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pantagora_app/pages/home_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pantagora_app/pages/splash_page.dart';
 
 void main() {
@@ -13,7 +13,17 @@ class PantAgoraApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      locale: const Locale('ar', ''),
+      supportedLocales: const [
+        Locale('ar', ''),
+        Locale('en', ''),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      theme: ThemeData(fontFamily: "Tajawal"),
       home: const SplashPage(),
     );
   }
